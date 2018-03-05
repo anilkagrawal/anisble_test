@@ -1,0 +1,11 @@
+---
+- name: testing variable stuff
+  # hosts: centos_hosts
+  hosts: all
+
+  tasks:
+  - name: get date on the server
+    shell: date 
+    register: output 
+
+  - debug: msg="the date is {{output.stdout}}"
